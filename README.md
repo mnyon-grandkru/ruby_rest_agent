@@ -1,6 +1,6 @@
 # Ruby REST Agent
 
-Encapsulates best practices associated with having a REST Client, and patterns developed processing info from places. The agent's scope includes the following domains:
+Encapsulates best practices associated with having a REST Agent, and patterns developed processing info from places. The agent's scope includes the following domains:
 * Fetcher - The code that fetches different kinds of data from the internet, for whatever purposes are needed
 * Parser - Code to parse the results in order to prepare them to be added to a database
 
@@ -15,7 +15,7 @@ To install the gem, add the following line to the application's Gemfile:
 
 ## Usage
 
-TODO: Write usage instructions here
+
 
 ## Development
 
