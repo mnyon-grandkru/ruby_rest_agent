@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-require_relative "lib/ruby_rest_client/version"
+require_relative "lib/ruby_rest_agent/version"
 
 Gem::Specification.new do |spec|
-  spec.name = "ruby_rest_client"
+  spec.name = "ruby_rest_agent"
   spec.version = RubyRestClient::VERSION
   spec.authors = ["Mark Nyon"]
   spec.email = ["msnyon@hey.com"]
