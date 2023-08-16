@@ -2,7 +2,7 @@
 
 require_relative "ruby_rest_agent/version"
 
-module RubyRestClient
+module RubyRestAgent
   class Error < StandardError; end
   # Your code goes here...
 end

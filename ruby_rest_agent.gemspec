@@ -4,7 +4,7 @@ require_relative "lib/ruby_rest_agent/version"
 
 Gem::Specification.new do |spec|
   spec.name = "ruby_rest_agent"
-  spec.version = RubyRestClient::VERSION
+  spec.version = RubyRestAgent::VERSION
   spec.authors = ["Mark Nyon"]
   spec.email = ["msnyon@hey.com"]
 
