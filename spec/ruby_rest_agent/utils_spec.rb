@@ -6,7 +6,7 @@ require "spec_helper"
 describe RubyRestAgent::Utils, "#game_date" do
   it 'returns date in a format "YYYYMMDD" for yesterday with no arguments' do
     yesterday = Date.today - 1
-    expect(RubyRestAgent::Utils.game_date()).to eq(yesterday.strftime("%Y%m%d"))
+    expect(RubyRestAgent::Utils.game_date).to eq(yesterday.strftime("%Y%m%d"))
   end
 
   it 'returns date in a format "YYYYMMDD" for another date with  arguments' do
