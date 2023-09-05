@@ -15,7 +15,7 @@ To install the gem, add the following line to the application's Gemfile:
 
 ## Usage
 
-TODO: Write usage instructions here
+
 
 ## Development
 
