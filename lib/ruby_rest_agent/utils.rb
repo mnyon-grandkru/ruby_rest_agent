@@ -8,4 +8,8 @@ class RubyRestAgent::Utils
     puts("selected date #{formatted_selected_date}")
     formatted_selected_date
   end
+
+  def self.environment_check
+    [ENV['MY_SPORTS_FEEDS_TOKEN'], ENV['MY_SPORTS_FEEDS_PASSWORD'],ENV['MY_SPORTS_FEEDS_HOST']].all?
+  end
 end
