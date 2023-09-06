@@ -6,12 +6,11 @@ source "https://rubygems.org"
 gemspec
 
 gem "rake", "~> 13.0"
-
-gem "rubocop", "~> 1.21"
 gem "dotenv"
 
 
 group :development, :test do
   gem 'rspec'
   gem 'pry-byebug'
+  gem 'rubocop', require: false
 end
