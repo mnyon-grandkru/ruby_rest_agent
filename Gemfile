@@ -15,3 +15,4 @@ group :development, :test do
   gem 'rspec'
   gem 'pry-byebug'
 end
+gem "jekyll", "~> 4.3"
