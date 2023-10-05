@@ -14,3 +14,4 @@ group :development, :test do
   gem 'pry-byebug'
   gem 'rubocop', require: false
 end
+gem "jekyll", "~> 4.3"
