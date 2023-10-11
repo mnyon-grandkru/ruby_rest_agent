@@ -9,7 +9,8 @@ class RubyRestAgent::Utils
     formatted_selected_date
   end
 
-  def self.environment_check
-    [ENV['MY_SPORTS_FEEDS_TOKEN'], ENV['MY_SPORTS_FEEDS_PASSWORD'],ENV['MY_SPORTS_FEEDS_HOST']].all?
+  def self.environment_check(env_vars)
+    p "RubyRestAgent::Utils: ENV Vars = #{env_vars}"
+    env_vars.all? { |env_var| ENV.key?(env_var) }
   end
 end

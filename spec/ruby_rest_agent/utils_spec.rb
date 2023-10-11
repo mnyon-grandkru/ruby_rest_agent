@@ -19,8 +19,8 @@ describe RubyRestAgent::Utils, '.game_date' do
 end
 
 describe RubyRestAgent::Utils, '.environment_check' do
+  let(:env_vars) { ['MY_SPORTS_FEEDS_TOKEN','MY_SPORTS_FEEDS_HOST']}
   describe 'on success' do
-    subject { described_class }
     before do
       allow(ENV).to receive(:[]).with('MY_SPORTS_FEEDS_TOKEN').and_return('MY_SPORTS_FEEDS_TOKEN')
       allow(ENV).to receive(:[]).with('MY_SPORTS_FEEDS_HOST').and_return('MY_SPORTS_FEEDS_HOST')
@@ -28,7 +28,7 @@ describe RubyRestAgent::Utils, '.environment_check' do
     end
 
     it 'returns true if the environment is correct' do
-      expect(subject.environment_check).to eq(true)
+      expect(RubyRestAgent::Utils.environment_check(env_vars)).to eq(true)
     end
   end
 
@@ -41,7 +41,7 @@ describe RubyRestAgent::Utils, '.environment_check' do
     end
 
     it 'returns false if one of the required environment variables is not set' do
-      expect(subject.environment_check).to eq(false)
+      expect(RubyRestAgent::Utils.environment_check(env_vars)).to eq(false)
     end
   end
 end
