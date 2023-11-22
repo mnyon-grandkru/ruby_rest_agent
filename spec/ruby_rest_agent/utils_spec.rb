@@ -3,17 +3,17 @@
 require 'spec_helper'
 
 describe RubyRestAgent::Utils, '.game_date' do
-  subject { described_class }
   describe 'on success' do
     let(:yesterday) { Date.today - 1 }
     let(:random_date) { Date.new(2002, 6, 24) }
 
+
     it 'returns date in a format "YYYYMMDD" for yesterday with no arguments' do
-      expect(subject.game_date(yesterday)).to eq(yesterday.strftime('%Y%m%d'))
+      expect(RubyRestAgent::Utils.game_date(yesterday)).to eq(yesterday.strftime('%Y%m%d'))
     end
 
     it 'returns date in a format "YYYYMMDD" for another date with no arguments' do
-      expect(subject.game_date(random_date)).to eq(random_date.strftime('%Y%m%d'))
+      expect(RubyRestAgent::Utils.game_date(random_date)).to eq(random_date.strftime('%Y%m%d'))
     end
   end
 end
