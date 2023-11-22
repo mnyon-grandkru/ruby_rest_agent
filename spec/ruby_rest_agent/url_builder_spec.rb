@@ -4,14 +4,12 @@ require 'spec_helper'
 
 describe RubyRestAgent::UrlBuilder, '#games_url' do
   before do
-    allow(ENV).to receive(:[]).with('MY_SPORTS_FEEDS_TOKEN').and_return('MY_SPORTS_FEEDS_TOKEN')
-    allow(ENV).to receive(:[]).with('MY_SPORTS_FEEDS_HOST').and_return('MY_SPORTS_FEEDS_HOST')
-    allow(ENV).to receive(:[]).with('MY_SPORTS_FEEDS_PASSWORD').and_return('MY_SPORTS_FEEDS_PASSWORD')
-    allow(ENV).to receive(:[]).with('MY_SPORTS_FEEDS_NBA_GAMES_PATH').and_return('MY_SPORTS_FEEDS_NBA_GAMES_PATH')
-    allow(ENV).to receive(:[]).with('MY_SPORTS_FEEDS_NHL_GAMES_PATH').and_return('MY_SPORTS_FEEDS_NHL_GAMES_PATH')
-    allow(ENV).to receive(:[]).with('MY_SPORTS_FEEDS_NFL_GAMES_PATH').and_return('MY_SPORTS_FEEDS_NFL_GAMES_PATH')
-    allow(ENV).to receive(:[]).with('MY_SPORTS_FEEDS_MLB_GAMES_PATH').and_return('MY_SPORTS_FEEDS_MLB_GAMES_PATH')
+    RubyRestAgent::Utils::SPORTS_PROVIDER_ENV_VARIABLES.each do |env_var|
+      allow(ENV).to receive(:key?).with(env_var).and_return(true)
+      allow(ENV).to receive(:[]).with(env_var).and_return(env_var)
+    end
   end
+
 
   describe "for the NBA" do
     let(:desired_nba_url) { "https://#{ENV['MY_SPORTS_FEEDS_TOKEN']}:#{ENV['MY_SPORTS_FEEDS_PASSWORD']}@#{ENV['MY_SPORTS_FEEDS_HOST']}/#{ENV['MY_SPORTS_FEEDS_NBA_GAMES_PATH']}" }
