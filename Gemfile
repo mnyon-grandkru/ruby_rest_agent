@@ -8,10 +8,10 @@ gemspec
 gem "rake", "~> 13.0"
 gem "dotenv"
 
+gem 'pry-byebug'
 
 group :development, :test do
   gem 'rspec'
-  gem 'pry-byebug'
   gem 'rubocop', require: false
 end
 gem "jekyll", "~> 4.3"
