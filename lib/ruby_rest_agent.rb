@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-
+require 'dotenv/load'
 require_relative "ruby_rest_agent/version"
 require_relative "ruby_rest_agent/fetcher"
 require_relative "ruby_rest_agent/parser"

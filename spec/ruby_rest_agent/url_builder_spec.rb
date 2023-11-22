@@ -7,12 +7,13 @@ describe RubyRestAgent::UrlBuilder, '#games_url' do
     allow(ENV).to receive(:[]).with('MY_SPORTS_FEEDS_TOKEN').and_return('MY_SPORTS_FEEDS_TOKEN')
     allow(ENV).to receive(:[]).with('MY_SPORTS_FEEDS_HOST').and_return('MY_SPORTS_FEEDS_HOST')
     allow(ENV).to receive(:[]).with('MY_SPORTS_FEEDS_PASSWORD').and_return('MY_SPORTS_FEEDS_PASSWORD')
+    allow(ENV).to receive(:[]).with('MY_SPORTS_FEEDS_NBA_GAMES_PATH').and_return('MY_SPORTS_FEEDS_NBA_GAMES_PATH')
+    allow(ENV).to receive(:[]).with('MY_SPORTS_FEEDS_NHL_GAMES_PATH').and_return('MY_SPORTS_FEEDS_NHL_GAMES_PATH')
+    allow(ENV).to receive(:[]).with('MY_SPORTS_FEEDS_NFL_GAMES_PATH').and_return('MY_SPORTS_FEEDS_NFL_GAMES_PATH')
+    allow(ENV).to receive(:[]).with('MY_SPORTS_FEEDS_MLB_GAMES_PATH').and_return('MY_SPORTS_FEEDS_MLB_GAMES_PATH')
   end
 
   describe "for the NBA" do
-    before do
-      allow(ENV).to receive(:[]).with('MY_SPORTS_FEEDS_NBA_GAMES_PATH').and_return('MY_SPORTS_FEEDS_NBA_GAMES_PATH')
-    end
     let(:desired_nba_url) { "https://#{ENV['MY_SPORTS_FEEDS_TOKEN']}:#{ENV['MY_SPORTS_FEEDS_PASSWORD']}@#{ENV['MY_SPORTS_FEEDS_HOST']}/#{ENV['MY_SPORTS_FEEDS_NBA_GAMES_PATH']}" }
     describe 'on success' do
       it 'returns the My Sports Feeds URL for a league if a league is provided' do
@@ -22,9 +23,6 @@ describe RubyRestAgent::UrlBuilder, '#games_url' do
   end
 
   describe "for the NHL" do
-    before do
-      allow(ENV).to receive(:[]).with('MY_SPORTS_FEEDS_NHL_GAMES_PATH').and_return('MY_SPORTS_FEEDS_NHL_GAMES_PATH')
-    end
     let(:desired_nhl_url) { "https://#{ENV['MY_SPORTS_FEEDS_TOKEN']}:#{ENV['MY_SPORTS_FEEDS_PASSWORD']}@#{ENV['MY_SPORTS_FEEDS_HOST']}/#{ENV['MY_SPORTS_FEEDS_NHL_GAMES_PATH']}" }
     describe 'on success' do
       it 'returns the My Sports Feeds URL for a league if a league is provided' do
@@ -34,9 +32,6 @@ describe RubyRestAgent::UrlBuilder, '#games_url' do
   end
 
   describe "for the NFL" do
-    before do
-      allow(ENV).to receive(:[]).with('MY_SPORTS_FEEDS_NFL_GAMES_PATH').and_return('MY_SPORTS_FEEDS_NFL_GAMES_PATH')
-    end
     let(:desired_nfl_url) { "https://#{ENV['MY_SPORTS_FEEDS_TOKEN']}:#{ENV['MY_SPORTS_FEEDS_PASSWORD']}@#{ENV['MY_SPORTS_FEEDS_HOST']}/#{ENV['MY_SPORTS_FEEDS_NFL_GAMES_PATH']}" }
     describe 'on success' do
       it 'returns the My Sports Feeds URL for a league if a league is provided' do
@@ -46,9 +41,6 @@ describe RubyRestAgent::UrlBuilder, '#games_url' do
   end
 
   describe "for the MLB" do
-    before do
-      allow(ENV).to receive(:[]).with('MY_SPORTS_FEEDS_MLB_GAMES_PATH').and_return('MY_SPORTS_FEEDS_MLB_GAMES_PATH')
-    end
     let(:desired_mlb_url) { "https://#{ENV['MY_SPORTS_FEEDS_TOKEN']}:#{ENV['MY_SPORTS_FEEDS_PASSWORD']}@#{ENV['MY_SPORTS_FEEDS_HOST']}/#{ENV['MY_SPORTS_FEEDS_MLB_GAMES_PATH']}" }
     describe 'on success' do
       it 'returns the My Sports Feeds URL for a league if a league is provided' do
